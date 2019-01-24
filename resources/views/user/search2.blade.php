@@ -7,15 +7,15 @@
                     </br>
                     <ul class="list-group">
                         <a id="searchProfile">
-                                <table id="search-results" class="table table-borderless">
-                                    <tr>
-                                        <th scope="row" id="imagen"><img src="shearchProfile"width="70" height="70"
-                                                                         class="d-inline-block align-content-lg-end"
-                                                                         alt="Responsive image"><br></th>
-                                        <td scope="col" class="name"></td>
-                                        <td class="email"><br></td>
-                                    </tr>
-                                </table>
+                            <table id="search-results" class="table table-borderless">
+                                <tr>
+                                    <th scope="row" id="imagen"><img src="shearchProfile" width="70" height="70"
+                                                                     class="d-inline-block align-content-lg-end"
+                                                                     alt="Responsive image"><br></th>
+                                    <td scope="col" class="name"></td>
+                                    <td class="email"><br></td>
+                                </tr>
+                            </table>
 
                         </a>
                         <a class="searchPhoto">

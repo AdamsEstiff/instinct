@@ -35,7 +35,6 @@ class SaveController extends Controller
         $usuario->image = $destino;
         $usuario->description = $descripcion;
         $usuario->save();
-
         return view('user.welcome');
     }
 
