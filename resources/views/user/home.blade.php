@@ -21,8 +21,7 @@
                                             <div class="card-body">
                                                 <form action=" publication" method="get">
                                                     <input type="submit" value="Hacer una publicación "
-                                                           class="btn btn-primary">
-                                                    <a href="information" class="btn btn-info">Editar datos del
+                                                           class="btn btn-primary">                                             <a href="information" class="btn btn-info">Editar datos del
                                                         perfil</a>
 
                                                 </form>
