@@ -34,7 +34,7 @@ class SaveController extends Controller
         $usuario->image = $destino;
         $usuario->description = $descripcion;
         $usuario->save();
-
+        //una vez ya esta la lista agregar todo lo q falta
 
         return view('user.home');
     }

@@ -9,18 +9,6 @@
                         <div class="card-header">Dashboard</div>
                         <div class="card-body">
                             </br>
-
-                            <?php
-                            $un = \App\ModelsSave\Un::find(1);
-                            $follow1 = \App\ModelsSave\Follow::where('follower_id', '=', Auth::user()->id)->first();
-                            $follow2 = \App\ModelsSave\Follow::where('author_id', '=', $user->id)->first();
-                            if ($follow1 == true && $follow2 == true) {
-                                $var = $un->un;
-                            } else {
-                                $var = $un->blanco;
-                            }
-                            $contadorFollow = \App\ModelsSave\Follow::where('author_id', '=', $user->id)->count();
-                            ?>
                             <div class="card-deck">
                                 <div class="card">
 
@@ -31,19 +19,8 @@
 
                                         <p class="card-text">{{ $user->description }}</p>
                                         <div class="card text-center" style="width: 100%;">
-                                            <div class="card-body">
-                                                <form method="post" action="{{url('follow')}}" role="form">
-                                                    {{csrf_field() }}
 
-                                                    <button type="submit" class="btn follow">{{$var}}Follow</button>
-                                                    <p class="card-text">
-                                                        <small class="text-muted">
-                                                    <p class="follower">Followers: {{$contadorFollow}}</p></small></p>
-                                                    <input type="hidden" name="follower_id"
-                                                           value="{{ Auth::user()->id }}">
-                                                    <input type="hidden" name="author_id" value="{{$user->id}}">
-                                                    <input type="hidden" name="photo_id" value="{{$user->id}}">
-                                                </form>
+                                            <div class="card-body">
 
                                             </div>
 

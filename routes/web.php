@@ -14,8 +14,6 @@
 
 Route::post('/save', 'Save\SaveController@save');
 Route::post('/add', 'Save\SaveController@addPublication');
-Route::post('/like', 'Save\SaveController@like');
-Route::post('/follow', 'Save\SaveController@follow');
 Route::get('/search', 'Save\SaveController@Search');
 Auth::routes();
 
