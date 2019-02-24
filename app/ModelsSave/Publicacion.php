@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Publicacion extends Model
 {
     protected $table="publicaciones";
-    protected $fillable=['user_id','imagen','comment','date'];//poner los q faltan
+    protected $fillable=['user_id','imagen','descripcion','nombre_p','precio',
+    'cantidad','contacto','dirrecion','comment'];
 
     public function user() {
 
