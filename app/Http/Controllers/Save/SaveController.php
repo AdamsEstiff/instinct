@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 
 use App\ModelsSave\Like;
 use App\ModelsSave\Follow;
-use App\ModelsSave\Un;
 use App\ModelsSave\Publicacion;
 
 use Illuminate\Http\Request;
@@ -35,22 +34,35 @@ class SaveController extends Controller
         $usuario->image = $destino;
         $usuario->description = $descripcion;
         $usuario->save();
-        return view('user.welcome');
+        //una vez ya esta la lista agregar todo lo q falta
+
+        return view('user.home');
     }
 
     public function addPublication(Request $request)
     {
-        $user_id = $request->input('user_id');
+        $id = $request->input('user_id');
+        $name = $request->input('nombre_p');
+        $cantidad = $request->input('cantidad');
+        $precio = $request->input('precio');
+        $contacto = $request->input('contacto');
+        $comentario = $request->input('comment');
+        $direccion = $request->input('dirrecion');
         $descripcion = $request->input('descripcion');
         $foto = $_FILES['image']['name'];
         $ruta = $_FILES['image']['tmp_name'];
         $destino = "images/publicaciones/" . $foto;
         copy($ruta, $destino);
         $publicacion = new Publicacion();
-        $publicacion->user_id = $user_id;
+        $publicacion->user_id = $id;
         $publicacion->imagen = $destino;
-        $publicacion->comment = $descripcion;
-        $publicacion->date = date('j-m-y');
+        $publicacion->descripcion = $descripcion;
+        $publicacion->nombre_p=$name;
+        $publicacion->precio=$precio;
+        $publicacion->cantidad=$cantidad;
+        $publicacion->contacto=$contacto;
+        $publicacion->dirrecion=$direccion;
+        $publicacion->comment = $comentario;
         $publicacion->save();
         return view('user.home');
     }

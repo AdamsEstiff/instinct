@@ -1,3 +1,19 @@
+Vegeta no lo es tanto
+Y las entradas
+??
+Son enormes las entradas
+Hahahaha
+Ya mandé mi ración de memes
+Hice algo productivo
+fredo
+mañana hay que programar la pagina
+a que hora?
+usted no recibe audio mio
+Hola
+Que paso?
+On tas ?
+Edificio nuevo
+si
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -17,9 +33,14 @@ class AddPublicacionesTable extends Migration
 
             $table->increments('id');
             $table->integer('user_id');
+            $table->string('nombre_p');
             $table->string('imagen');
+            $table->string('descripcion');
+            $table->integer('precio');
+            $table->integer('cantidad');
+            $table->string('contacto');
+            $table->string('dirrecion');
             $table->string('comment');
-            $table->date('date');
 
             $table->timestamps();
         });

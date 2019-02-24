@@ -18,6 +18,13 @@
                                     <a href="{{asset('home')}}" class="btn btn-danger">Cancelar</a>
                                 </div>
                             </div>
+                            <input type="text" name="nombre_p" placeholder="nombre">
+                            <input type="number" name="cantidad" placeholder="cantidad">
+                            <input type="number" name="precio" placeholder="precio">
+                            <input type="text" name="contacto" placeholder="contacto">
+                            <input type="text" name="dirrecion" placeholder="direccion">
+                            <textarea type="text" name="comment" placeholder="comentario"></textarea>
+
                             <div class="card-body">
                                 </br>
                                 {{csrf_field() }}
@@ -27,7 +34,6 @@
                                     <img class="card-img-top" src="{{asset("images/agregar.png")}}"
                                          alt="Card image cap">
                                 </label>
-
                             </div>
                         </form>
                     </div>
