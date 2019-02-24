@@ -1,10 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\User;
-
 use App\User;
-use App\ModelsSave\Like;
-use App\ModelsSave\Follow;
 use App\ModelsSave\Publicacion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

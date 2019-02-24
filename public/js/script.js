@@ -15,16 +15,7 @@ $(document).ready(function () {
 
     });
 
-    $('.follow').click(function (e) {
-        e.preventDefault();
-        var form = $(this).parents('form');
-        var url = form.attr('action');
-        $.post(url, form.serialize(), function (result) {
-            $('.follower').html(result.total);
-            $('.follow').html(result.message);
 
-        });
-    });
     $('#search').keyup(function (e) {
         e.preventDefault();
         $('.content').hide();
@@ -50,24 +41,6 @@ $(document).ready(function () {
                         '</table>' +
                         '</a>'
                     );
-                });
-            }
-
-            if (result.comments.length > 0) {
-                result.comments.forEach(function (comment) {
-                    table.append('<a class="searchPhoto" href="photo/' + comment.id + '">' +
-                        '<table id="search-results "class="table table-borderless">' +
-                        '<tbody>' + '' +
-                        '<tr>\n' +
-                        '<th colspan="2" id="image"><img src="' + comment.imagen + '" width="90px" alt=""></th>\n' +
-
-                        '<td class="comment">' + comment.comment + '<br></td>\n' +
-                        '</tr>' +
-                        '</tbody>' +
-                        '</table>' +
-                        '</a>'
-                    );
-
                 });
             }
 
