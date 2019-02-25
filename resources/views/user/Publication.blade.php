@@ -66,7 +66,6 @@
                                 </div>
 
                             </div>
-
                         </div>
                         <div class="container" id="button-addon4">
                             <button class="btn btn-outline-primary" type="submit">Publicar</button>
