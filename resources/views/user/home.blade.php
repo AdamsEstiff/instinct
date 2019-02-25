@@ -60,7 +60,7 @@
                                                 <form style="width: 100%" action="publication" method="get">
                                                     <input type="submit" value="Editar"
                                                            class="btn btn-outline-primary" style="margin: 1rem">
-                                                    <a href="information" class="btn btn-outline-danger">Eliminar</a>
+                                                    <a href="delete/{{$publicacion->id}}" class="btn btn-outline-danger">Eliminar</a>
                                                 </form>
                                     </div>
                               </a></br>

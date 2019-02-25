@@ -54,7 +54,6 @@
                                         <img class="card-img-top" src="{{ url($publicacion->imagen) }}" alt="Card image cap">
                                             <div class="card-body">
                                                  <h5 class="card-title"><strong>{{ $publicacion->user->name }}</strong></h5>
-                                                 <p class="card-text">{{ $publicacion->comment }}</p>
                                              </div>
                                     </div>
                               </a></br>

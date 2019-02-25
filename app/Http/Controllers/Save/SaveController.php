@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Save;
 
 use App\Http\Controllers\Controller;
 
-use App\ModelsSave\Like;
-use App\ModelsSave\Follow;
 use App\ModelsSave\Publicacion;
 
 use Illuminate\Http\Request;
@@ -86,5 +84,9 @@ class SaveController extends Controller
             "users" => $users,
             "comments" => $comments
         ]);
+    }
+    public function delete($id){
+       Publicacion::destroy($id);
+       return back();
     }
 }
