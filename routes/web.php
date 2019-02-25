@@ -13,7 +13,7 @@
 
 
 Route::post('/save', 'Save\SaveController@save');
-Route::post('/delete/{id}', 'Save\SaveController@delete');
+Route::get('/delete/{id}', 'Save\SaveController@delete');
 Route::post('/add', 'Save\SaveController@addPublication');
 Route::get('/search', 'Save\SaveController@Search');
 Auth::routes();
