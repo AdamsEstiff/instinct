@@ -37,6 +37,35 @@ class SaveController extends Controller
         return view('user.home');
     }
 
+    public function editPhoto(Request $request)
+    {
+        $id_publication=$request->input('publi_id');
+        $id = $request->input('user_id');
+        $name = $request->input('nombre_p');
+        $cantidad = $request->input('cantidad');
+        $precio = $request->input('precio');
+        $contacto = $request->input('contacto');
+        $comentario = $request->input('comment');
+        $direccion = $request->input('dirrecion');
+        $descripcion = $request->input('descripcion');
+        $foto = $_FILES['image']['name'];
+        $ruta = $_FILES['image']['tmp_name'];
+        $destino = "images/publicaciones/" . $foto;
+        copy($ruta, $destino);
+        $edit = Publicacion::find($id_publication);
+        $edit->user_id = $id;
+        $edit->imagen = $destino;
+        $edit->descripcion = $descripcion;
+        $edit->nombre_p = $name;
+        $edit->precio = $precio;
+        $edit->cantidad = $cantidad;
+        $edit->contacto = $contacto;
+        $edit->dirrecion = $direccion;
+        $edit->comment = $comentario;
+        $edit->save();
+        return back();
+    }
+
     public function addPublication(Request $request)
     {
         $id = $request->input('user_id');
@@ -55,11 +84,11 @@ class SaveController extends Controller
         $publicacion->user_id = $id;
         $publicacion->imagen = $destino;
         $publicacion->descripcion = $descripcion;
-        $publicacion->nombre_p=$name;
-        $publicacion->precio=$precio;
-        $publicacion->cantidad=$cantidad;
-        $publicacion->contacto=$contacto;
-        $publicacion->dirrecion=$direccion;
+        $publicacion->nombre_p = $name;
+        $publicacion->precio = $precio;
+        $publicacion->cantidad = $cantidad;
+        $publicacion->contacto = $contacto;
+        $publicacion->dirrecion = $direccion;
         $publicacion->comment = $comentario;
         $publicacion->save();
         return view('user.home');
@@ -85,8 +114,10 @@ class SaveController extends Controller
             "comments" => $comments
         ]);
     }
-    public function delete($id){
-       Publicacion::destroy($id);
-       return back();
+
+    public function delete($id)
+    {
+        Publicacion::destroy($id);
+        return back();
     }
 }

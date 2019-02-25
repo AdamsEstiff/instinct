@@ -57,7 +57,7 @@
                                             <div class="card-body">
                                                  <h5 class="card-title"><strong>{{ $publicacion->user->name }}</strong></h5>
                                              </div>
-                                                <form style="width: 100%" action="publication" method="get">
+                                                <form style="width: 100%" action="editpublication/{{$publicacion->id}}" method="get">
                                                     <input type="submit" value="Editar"
                                                            class="btn btn-outline-primary" style="margin: 1rem">
                                                     <a href="delete/{{$publicacion->id}}" class="btn btn-outline-danger">Eliminar</a>

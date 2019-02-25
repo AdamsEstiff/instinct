@@ -18,6 +18,12 @@ class userController extends Controller
     {
         return view('user.Publication');
     }
+    public function editPublication($id){
+        $edit=Publicacion::find($id);
+        return view('user.EditPublication',[
+            "edit"=>$edit
+        ]);
+    }
 
     public function getPhoto($post_id)
     {

@@ -16,9 +16,11 @@ Route::post('/save', 'Save\SaveController@save');
 Route::get('/delete/{id}', 'Save\SaveController@delete');
 Route::post('/add', 'Save\SaveController@addPublication');
 Route::get('/search', 'Save\SaveController@Search');
+Route::post('/editPhoto','Save\SaveController@editPhoto');
 Auth::routes();
 
 Route::get('/publication', 'User\userController@getPublication');
+Route::get('/editpublication/{id}', 'User\userController@editPublication');
 Route::get('/information', 'User\userController@getInformation');
 Route::get('photo/{post_id}', 'User\userController@getPhoto');
 Route::get('user/{user_id}', 'User\userController@getUser');
