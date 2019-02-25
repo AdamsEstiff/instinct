@@ -30,9 +30,6 @@
                                             </div>
 
                                         </div>
-                                        <p class="card-text">
-                                            <small class="text-muted">Last updated 3 mins ago</small>
-                                        </p>
                                     </div>
 
                                 </div>
@@ -45,7 +42,7 @@
                 ?>
             </div>
             <br>
-            <div class="content">
+            <div class="content ">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-11">
@@ -54,13 +51,17 @@
 
                                 @foreach($publicaciones as $publicacion)
                                     <span>
-                                <a href="photo/{{ $publicacion->id }}">
-                                     <div class="card" style="width: 30rem;">
+                                <a href="photo/{{ $publicacion->id }} ">
+                                     <div class="card text-center" style="width: 30rem;">
                                         <img class="card-img-top" src="{{ $publicacion->imagen }}" alt="Card image cap">
                                             <div class="card-body">
                                                  <h5 class="card-title"><strong>{{ $publicacion->user->name }}</strong></h5>
-                                                 <p class="card-text">{{ $publicacion->comment }}</p>
                                              </div>
+                                                <form style="width: 100%" action="publication" method="get">
+                                                    <input type="submit" value="Editar"
+                                                           class="btn btn-outline-primary" style="margin: 1rem">
+                                                    <a href="information" class="btn btn-outline-danger">Eliminar</a>
+                                                </form>
                                     </div>
                               </a></br>
                             </span>

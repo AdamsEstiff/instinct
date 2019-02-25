@@ -71,76 +71,7 @@ class SaveController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function like(Request $request)
-    {
-        $user_id = $request->input('user_id');
-        $photo_id = $request->input('photo_id');
 
-        $like1 = Like::where('user_id', '=', $user_id)->first();
-        $like2 = Like::where('post_id', '=', $photo_id)->get();
-        $contador= like::all()->count();
-        if($request->ajax()){
-            if ($like1 == true && $like2 == true) {
-                $like1->delete();
-                $post = Publicacion::find($photo_id);
-                $contador= Like::where('post_id','=' , $photo_id) ->count();
-                return response()->json([
-                    'total'=>"Like: ".$contador,
-                    'message'=>'Like'
-
-                ]);
-
-            } else {
-                $add = new Like();
-                $add->user_id = $user_id;
-                $add->post_id = $photo_id;
-                $add->save();
-                $post = Publicacion::find($photo_id);
-                $contador= Like::where('post_id','=' , $photo_id) ->count();
-                return response()->json([
-                    'total'=>"Like: ".$contador,
-                    'message'=>'DisLike'
-
-                ]);
-
-            }
-        }
-
-
-    }
-
-    public function follow(Request $request)
-    {
-        $follower_id = $request->input('follower_id');
-        $user_id = $request->input('author_id');
-        $photo_id = $request->input('photo_id');
-        $follow1 = Follow::where('follower_id', '=', $follower_id)->first();
-        $follow2 = Follow::where('author_id', '=', $user_id)->get();
-
-        if($request->ajax()){
-            if ($follow1 == true && $follow2 == true) {
-                $follow1->delete();
-                $contador = Follow::where('author_id','=',$user_id)->count();
-                return response()->json([
-                    'total'=>"Follow: ".$contador,
-                    'message'=>'Follow  '
-                ]);
-
-            } else {
-                $add = new Follow();
-                $add->follower_id = $follower_id;
-                $add->author_id = $user_id;
-                $add->save();
-                $contador = Follow::where('author_id','=',$user_id)->count();
-                return response()->json([
-                    'total'=>"Follow: ".$contador,
-                    'message'=>'UnFollow'
-                ]);
-            }
-
-        }
-
-    }
 
     public function Search(Request $request)
     {
