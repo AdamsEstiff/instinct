@@ -24,22 +24,25 @@ class SaveController extends Controller
         $descripcion = $request->input('descripcion');
         $foto = $_FILES['image']['name'];
         $ruta = $_FILES['image']['tmp_name'];
-        $destino = "images/post/" . $foto;
-        copy($ruta, $destino);
         $usuario = User::find($id);
         $usuario->name = $name;
         $usuario->email = $correo;
-        $usuario->image = $destino;
         $usuario->description = $descripcion;
-        $usuario->save();
-        //una vez ya esta la lista agregar todo lo q falta
+        if ($foto == '') {
+            $usuario->save();
+        } else {
+            $destino = "images/post/" . $foto;
+            copy($ruta, $destino);
+            $usuario->image = $destino;
+            $usuario->save();
+        }
 
         return view('user.home');
     }
 
     public function editPhoto(Request $request)
     {
-        $id_publication=$request->input('publi_id');
+        $id_publication = $request->input('publi_id');
         $id = $request->input('user_id');
         $name = $request->input('nombre_p');
         $cantidad = $request->input('cantidad');
@@ -50,11 +53,10 @@ class SaveController extends Controller
         $descripcion = $request->input('descripcion');
         $foto = $_FILES['image']['name'];
         $ruta = $_FILES['image']['tmp_name'];
-        $destino = "images/publicaciones/" . $foto;
-        copy($ruta, $destino);
+
         $edit = Publicacion::find($id_publication);
         $edit->user_id = $id;
-        $edit->imagen = $destino;
+
         $edit->descripcion = $descripcion;
         $edit->nombre_p = $name;
         $edit->precio = $precio;
@@ -62,7 +64,14 @@ class SaveController extends Controller
         $edit->contacto = $contacto;
         $edit->dirrecion = $direccion;
         $edit->comment = $comentario;
-        $edit->save();
+        if($foto==''){
+            $edit->save();
+        }else{
+            $destino = "images/publicaciones/" . $foto;
+            copy($ruta, $destino);
+            $edit->imagen = $destino;
+            $edit->save();
+        }
         return back();
     }
 
@@ -82,7 +91,6 @@ class SaveController extends Controller
         copy($ruta, $destino);
         $publicacion = new Publicacion();
         $publicacion->user_id = $id;
-        $publicacion->imagen = $destino;
         $publicacion->descripcion = $descripcion;
         $publicacion->nombre_p = $name;
         $publicacion->precio = $precio;
@@ -90,6 +98,7 @@ class SaveController extends Controller
         $publicacion->contacto = $contacto;
         $publicacion->dirrecion = $direccion;
         $publicacion->comment = $comentario;
+        $publicacion->imagen = $destino;
         $publicacion->save();
         return view('user.home');
     }
