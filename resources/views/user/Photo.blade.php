@@ -17,15 +17,28 @@
                                 </div>
                             </div>
                             <div class="card">
+                                <table>
+                                <tr>
+
+                                    <th scope="row">
+                                        <a href="{{ url('user') }}/{{ $publicacion->user_id }}">
+                                            <p><img src="{{ url($publicacion->user->image) }}" width="90" height="90"
+                                                    class="d-inline-block align-content-lg-end" alt=""></p>
+                                            <h3>{{ $publicacion->user->name}}</h3>
+
+                                        </a>
+
+                                    </th>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success">Comprar</button>
+                                    </td>
+
+
+                                </tr>
+                                </table>
 
                                 <div class="card-body">
-                                    <a href="{{ url('user') }}/{{ $publicacion->user_id }}">
-                                        <p><img src="{{ url($publicacion->user->image) }}" width="90" height="90"
-                                                class="d-inline-block align-content-lg-end" alt=""></p>
-                                        <h3>{{ $publicacion->user->name}}</h3>
 
-
-                                    </a>
                                     <div class="card-body">
 
                                         <table class="container">
