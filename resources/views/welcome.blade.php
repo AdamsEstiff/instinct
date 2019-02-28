@@ -95,15 +95,14 @@
                               </a>
                                 </br>
                             </span>
-
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
 
-            @endguest
-        </div>
+    @endguest
+</div>
 
 @include('user.search2')
 </body>
