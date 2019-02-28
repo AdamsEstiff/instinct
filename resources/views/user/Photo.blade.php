@@ -30,7 +30,7 @@
 
                                     </th>
                                     <td>
-                                        <button type="button" class="btn btn-outline-success">Comprar</button>
+                                        <a href="{{url('Buy')}}/{{$publicacion->id}}" class="btn btn-outline-success">Comprar</a>
                                     </td>
 
 
@@ -44,7 +44,7 @@
                                         <table class="container">
                                             <tr>
                                                 <th scope="row">
-                                                    <form method="post" action="{{ url('like') }}" role="form">
+                                                    <form  role="form">
                                                         {{csrf_field() }}
                                                         <p></p>
                                                         </small></p></span>
@@ -55,7 +55,7 @@
                                                     </form>
                                                 </th>
                                                 <td>
-                                                    <form method="post" action="{{url('follow')}}" role="form">
+                                                    <form method="post"  role="form">
                                                         {{csrf_field() }}
                                                         <span>
                                                    </span>

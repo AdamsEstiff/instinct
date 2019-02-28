@@ -67,4 +67,6 @@
     @endsection
     @section('script')
         <script src="{{asset('js/script.js')}}"></script>
+            </div>
+</div>
 @endsection

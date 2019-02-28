@@ -53,4 +53,13 @@ class userController extends Controller
     {
         return 'store';
     }
+
+    public function getBuy($id)
+    {
+        $publicacion = Publicacion::find($id);
+
+        return view('user.Buy', [
+            "publicacion" => $publicacion
+        ]);
+    }
 }
