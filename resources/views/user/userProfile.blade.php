@@ -4,7 +4,7 @@
         @include('user.search2')
         <div class="content">
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-5">
                     <div class="card">
                         <div class="card-header">Dashboard</div>
                         <div class="card-body">
@@ -12,16 +12,17 @@
                             <div class="card-deck">
                                 <div class="card">
 
-                                    <img class="card-img-top" src="{{url($user->image) }}" alt="Card image cap">
+                                    <img class="img-thumbnail" src=" {{url($user->image) }}" alt="Card image cap">
 
                                     <div class="card-body">
                                         <h5 class="card-title">{{$user->name }}</h5>
 
-                                        <p class="card-text">{{ $user->description }}</p>
                                         <div class="card text-center" style="width: 100%;">
 
-                                            <div class="card-body">
 
+                                            <div class="card-body">
+                                                <h2>Descripcion:</h2>
+                                                <h6> {{$user->description}}</h6>
                                             </div>
 
                                         </div>
