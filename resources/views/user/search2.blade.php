@@ -23,7 +23,9 @@
                             <table id="search-results " class="table table-borderless">
                                 <tr>
                                     <th colspan="2" id="image"></th>
-                                    <td scope="col" class="comment"><br></td>
+                                    <td scope="col" class="nombre_p"><br></td>
+                                    <td scope="col" class="precio"></td>
+                                    <td scope="col" class="descripcion"></td>
                                     </th>
                                 </tr>
 

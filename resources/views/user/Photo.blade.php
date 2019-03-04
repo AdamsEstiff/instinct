@@ -68,7 +68,7 @@
                                                             <tbody>
                                                             <tr>
                                                                 <th scope="row"> Descripcion:</th>
-                                                                <td><textarea class="form-control "  required> {{ $publicacion->Descripcion}} </textarea></td>
+                                                                <td><textarea class="form-control "  required> {{ $publicacion->descripcion}} </textarea></td>
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row"> Precio:</th>

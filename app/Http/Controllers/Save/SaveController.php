@@ -56,7 +56,6 @@ class SaveController extends Controller
 
         $edit = Publicacion::find($id_publication);
         $edit->user_id = $id;
-
         $edit->descripcion = $descripcion;
         $edit->nombre_p = $name;
         $edit->precio = $precio;
@@ -113,14 +112,14 @@ class SaveController extends Controller
     {
         $search = $request->input('buscar');
         $users = [];
-        $comments = [];
+        $publicaciones = [];
         if ($search != "") {
             $users = User::where('name', 'Like', "%$search%")->get();
-            $comments = Publicacion::where('comment', 'Like', "%$search%")->get();
+            $publicaciones = Publicacion::where('nombre_p', 'Like', "%$search%")->get();
         }
         return response()->json([
             "users" => $users,
-            "comments" => $comments
+            "publicaciones" => $publicaciones
         ]);
     }
 
