@@ -7,7 +7,8 @@
                 <div class="card">
                     <div class="card-header"></div>
                     <div class="card-body">
-                        <form  class="needs-validation" action="save" method="POST" enctype="multipart/form-data" role="form" novalidate>
+                        <form class="needs-validation" action="save" method="POST" enctype="multipart/form-data"
+                              role="form" novalidate>
 
                             </br>
                             {{csrf_field() }}
@@ -38,7 +39,8 @@
                                                     <tr>
                                                         <td><strong>Correo:</strong></td>
                                                         <td><input name="email" type="text"
-                                                                   value="{{ Auth::user()->email }}"class="form-control"
+                                                                   value="{{ Auth::user()->email }}"
+                                                                   class="form-control"
                                                                    id="validationCustom02" required></td>
                                                     </tr>
                                                 </p>
@@ -57,6 +59,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </form>
                     </div>
                 </div>

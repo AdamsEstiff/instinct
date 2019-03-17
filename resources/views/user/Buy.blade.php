@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-lg-center">
-            <form class="needs-validation" novalidate>
+            <form action="compra" class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="validationCustom01">Nombre Completo</label>
@@ -47,30 +47,22 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom04">Cantidad</label>
-                        <input type="text" class="form-control" id="validationCustom05"  value="{{ $publicacion->cantidad}}" placeholder=""  disabled>
+                        <input type="number" class="form-control" name="cantidad" id="validationCustom05"  value="{{ $publicacion->cantidad}}" placeholder=""  >
                         <div class="invalid-feedback">
                             Porfavor valide la cantidad.
                         </div>
                     </div>
                 </div>
+                <div >
+                    <input name="productoID" type="hidden" class="form-control"  value="{{ $publicacion->id}}"  hidden>
+                    <input name="compradorID" type="hidden" class="form-control" value="{{Auth::user()->id}}"  hidden>
+
+
+                </div>
 
                 <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label for="validationCustom03">ISV</label>
-                        <input type="text" class="form-control" id="validationCustom03"  placeholder="" disabled>
-                        <div class="invalid-feedback">
-                            El producto debe tener un precio.
-                        </div>
-                    </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="validationCustom04">Total a pagar </label>
-                        <input type="text" class="form-control" id="validationCustom05" placeholder="" disabled>
-                        <div class="invalid-feedback">
-                            Porfavor valide el Total.
-                        </div>
-                    </div>
-                </div>
+
 
 
                 <div class="form-group">
