@@ -15,22 +15,40 @@ class compraController extends Controller
 
         $compradorID = $request->input('compradorID');
         $productoID = $request->input('productoID');
-        $cantidad = $request->input('cantidad');
-        $cantidad= $cantidad-1;
         $comprador=User::find($compradorID);
         $exito="Felicidades usted a concluido con el proceso de compra excitosamente, gracias por preferirnos";
         try{
             $compra= Publicacion::find($productoID);
-            $compra->cantidad=$cantidad;
+            if($compra->cantidad<1){
+                return  view('user.buyFinish',[
+                    "producto"=>$compra,
+                    "comprador"=>$comprador,
+                    "info"=>"Que mal :(",
+                    "buyresult"=>"No funcio su compra de ",
+                    "color"=>"alert-danger",
+                    "messaje"=>  "El numero de produtos es insuficiente"
+                ]);
+            }
+            else{
+                $cantidad=$compra->cantidad-1;
+                $compra->cantidad=$cantidad;
+                $compra->save();
+                return view('user.buyFinish',[
+                    "messaje"=>$exito,
+                    "producto"=>$compra,
+                    "info"=>"En hora buena!",
+                    "buyresult"=>"Es un exito su compra de ",
+                    "color"=>"alert-success",
+                    "comprador"=>$comprador
+                ]);
+            }
 
-            $compra->save();
-            return view('user.buyFinish',[
-                "messaje"=>$exito,
-                "producto"=>$compra,
-                "comprador"=>$comprador
-            ]);
         }catch (Exception $e){
             return  view('user.buyFinish',[
+                "producto"=>$compra,
+                "comprador"=>$comprador,
+                "info"=>"Que mal! :(",
+                "buyresult"=>"No funcio su compra de ",
                 "messaje"=> $e
             ]);
         }

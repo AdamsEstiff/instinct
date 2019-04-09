@@ -1,20 +1,3 @@
-$(document).ready(function () {
-    var table = $('#search-results');
-    $('#tablaBuscar').hide();
-   /** $('#like').click(function (e) {
-
-        e.preventDefault();
-        var form = $(this).parents('form');
-        var url = form.attr('action');
-
-        $('#like', '#cont').show();
-        $.post(url, form.serialize(), function (result) {
-            $('#cont').html(result.total);
-            $('#like').html(result.message);
-        });
-
-    });
-*/
 
     $('#search').keyup(function (e) {
         e.preventDefault();

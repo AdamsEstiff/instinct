@@ -6,15 +6,15 @@
             <div class="content card col-md-7 ">
                     <div class="" role="alert">
                         <br>
-                        <h4 class="alert-heading">En Hora Buena!</h4>
-                        <p class="alert alert-success">{{$messaje}} {{$comprador->name}} Estamos para servile.</p>
+                        <h4 class="alert-heading">{{$info}}</h4>
+                        <p class="alert {{$color}}">{{$messaje}} {{$comprador->name}} Estamos para servirle.</p>
                         <hr>
                         <table>
                             <tr scope="row" >
                                 <img  class=" mb-3 col-md-5" src="{{ url($producto->imagen) }}"
                                       alt="Card image cap" >
                             </tr>
-                            <th> &nbsp &nbsp Su compra fue {{$producto->nombre_p}}</th>
+                            <th> {{$buyresult}} {{$producto->nombre_p}}</th>
 
 
                         </table>

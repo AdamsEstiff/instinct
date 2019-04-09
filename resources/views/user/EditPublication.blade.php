@@ -23,11 +23,9 @@
                                         </div>
 
                                     </label>
-                                    <div style="margin-top:50%" class="container text-center" id="button-addon4">
+                                    <div style="margin-top:100px" class="container text-center" id="button-addon4">
                                         <button class="btn btn-outline-primary" type="submit">Editar</button>
-
                                         <a href="{{asset('home')}}" class="btn btn-outline-danger">Salir</a>
-
                                     </div>
                                     <div class="input-group">
                                         <input name="user_id" type="hidden" value="{{Auth::User()->id}}">

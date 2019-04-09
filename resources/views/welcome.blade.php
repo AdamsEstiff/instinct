@@ -80,7 +80,7 @@
 
                     <div class="card-deck">
 
-                        @foreach($publicaciones as $publicacion)
+                        @foreach($publicaciones->reverse() as $publicacion)
 
                             <span>
                                 <a href="photo/{{ $publicacion->id }}">
@@ -88,7 +88,8 @@
                                         <img class="card-img-top" src="{{ $publicacion->imagen }}" alt="Card image cap">
                                             <div class="card-body">
                                                  <h5 class="card-title"><strong>{{ $publicacion->user->name }}</strong></h5>
-                                                 <p class="card-text">{{ $publicacion->comment }}</p>
+
+                                                 <p class="card-text">{{ $publicacion->nombre_p }}</p>
 
                                              </div>
                                     </div>

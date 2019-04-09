@@ -46,8 +46,8 @@
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="validationCustom04">Cantidad</label>
-                        <input type="number" class="form-control" name="cantidad" id="validationCustom05"  value="{{ $publicacion->cantidad}}" placeholder=""  >
+                        <label for="validationCustom04">Cantidad Disponible</label>
+                        <label class="form-control" name="cantidad" id="validationCustom05">{{ $publicacion->cantidad}}</label>
                         <div class="invalid-feedback">
                             Porfavor valide la cantidad.
                         </div>
@@ -56,8 +56,6 @@
                 <div >
                     <input name="productoID" type="hidden" class="form-control"  value="{{ $publicacion->id}}"  hidden>
                     <input name="compradorID" type="hidden" class="form-control" value="{{Auth::user()->id}}"  hidden>
-
-
                 </div>
 
                 <div class="form-row">
