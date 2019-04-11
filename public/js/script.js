@@ -1,4 +1,6 @@
-
+$(document).ready(function () {
+    var table = $('#search-results');
+    $('#tablaBuscar').hide();
     $('#search').keyup(function (e) {
         e.preventDefault();
         $('.content').hide();

@@ -25,6 +25,8 @@ Route::get('/information', 'User\userController@getInformation');
 Route::get('photo/{post_id}', 'User\userController@getPhoto');
 Route::get('user/{user_id}', 'User\userController@getUser');
 
+
+
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@welcome');
 Route::get('/Buy/{id}','User\userController@getBuy');
