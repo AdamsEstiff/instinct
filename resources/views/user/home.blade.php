@@ -6,8 +6,8 @@
         <div class="content">
             <div class="row justify-content-center">
                 <div class="col-md-5">
-                    <div class="card">
-                        <div class="card-header">Bienvenido {{Auth::user()->name}}</div>
+                    <div class="card" style="margin-top: 2%">
+                        <div class="card-header" style="text-align: center;">Bienvenido {{Auth::user()->name}}</div>
                         <div class="card-body">
                             </br>
                             <div class="card-deck">
@@ -22,7 +22,7 @@
                                                 <form action=" publication" method="get">
                                                     <input type="submit" value="Hacer una publicación "
                                                            class="btn btn-primary">
-                                                    <a href="information" class="btn btn-info">Editar datos del
+                                                    <a href="information" class="btn btn-success" style="color: white">Editar datos del
                                                         perfil</a>
 
                                                 </form>

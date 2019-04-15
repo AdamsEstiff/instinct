@@ -11647,5 +11647,7 @@ a.text-dark:focus {
 
 .content-right {
   float: right;
+  margin-top: 8%;
+  margin-right: 3%;
 }
 

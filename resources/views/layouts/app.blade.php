@@ -31,7 +31,7 @@
             @else
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     |
-                    <img src="{{url(Auth::user()->image ) }}" width="30" height="30" class="d-inline-block align-top"
+                    <img src="{{url(Auth::user()->image ) }}" width="30" height="30" style="border-radius: 100px" class="d-inline-block align-top"
                          alt="">
                 </a>
             @endguest
@@ -40,9 +40,7 @@
                     aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            </button>       <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
 
@@ -92,7 +90,7 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main>
         @yield('content')
 
     </main>

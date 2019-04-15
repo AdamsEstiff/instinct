@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div  style="width: 100%; height: 91.5vh; background-image: url('https://s3.amazonaws.com/fjwp/blog/wp-content/uploads/2017/06/28043329/Inspirational-Home-Office-Workspace-Tips-to-Get-Organized.jpg')">
+        <div class="content-right col-md-6">
+            <div class="card"  style="border: 5px">
             <div class="card">
                 <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 
